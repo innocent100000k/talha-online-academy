@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Talha Online Academy</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172b4d;
+}
+
+header {
+  background: #102b50;
+  color: white;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  color: #55d6be;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(130deg,#102b50,#176b87);
+  color: white;
+  text-align: center;
+  padding: 75px 15px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  line-height: 1.8;
+  color: #e2f4f4;
+}
+
+.btn {
+  display: inline-block;
+  background: #55d6be;
+  color: #102b50;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+section {
+  padding: 50px 6%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.heading p {
+  color: #64748b;
+}
+
+.boards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.board {
+  background: #42d982;
+  color: #102b50;
+  padding: 16px 7px;
+  text-align: center;
+  border: 2px solid #24b968;
+  border-radius: 9px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 22px 15px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid #e5eaf0;
+  box-shadow: 0 4px 12px #0000000d;
+}
+
+.card h3 {
+  color: #176b87;
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.card button {
+  background: #176b87;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.features .card {
+  min-height: 120px;
+}
+
+.price {
+  max-width: 480px;
+  margin: auto;
+  padding: 35px 20px;
+  background: #102b50;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.price h2 {
+  font-size: 45px;
+  color: #55d6be;
+  margin: 15px;
+}
+
+.price p {
+  line-height: 2;
+}
+
+#subjectPage {
+  min-height: 65vh;
+}
+
+.back {
+  background: #176b87;
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.chapter {
+  background: white;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 9px;
+  box-shadow: 0 3px 10px #0000000d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.chapter button {
+  background: #176b87;
+  color: white;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#pdfViewer {
+  display: none;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+#pdfFrame {
+  width: 100%;
+  height: 650px;
+  border: 1px solid #ddd;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.about {
+  background: #eaf3f7;
+  text-align: center;
+  line-height: 2;
+}
+
+footer {
+  background: #102b50;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  line-height: 2;
+}
+
+footer span {
+  color: #55d6be;
+}
+
+@media(min-width:700px) {
+  .boards {
+    grid-template-columns: repeat(3,1fr);
+  }
+  .grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TALHA ONLINE ACADEMY</div>
+
+  <nav>
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#boards">Boards</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main id="homePage">
+
+<div class="hero">
+  <h1>Welcome to Talha Online Academy</h1>
+  <p>11th Class Complete Study Notes</p>
+  <p>All Punjab Boards | First Year</p>
+  <a href="#subjects" class="btn">Explore Notes</a>
+</div>
+
+<section id="boards">
+
+  <div class="heading">
+    <h2>Punjab All Boards</h2>
+    <p>One Academy For All Punjab Students</p>
+  </div>
+
+  <div class="boards">
+    <div class="board">Lahore Board</div>
+    <div class="board">Faisalabad Board</div>
+    <div class="board">Gujranwala Board</div>
+    <div class="board">Multan Board</div>
+    <div class="board">Rawalpindi Board</div>
+    <div class="board">Sargodha Board</div>
+    <div class="board">Bahawalpur Board</div>
+    <div class="board">DG Khan Board</div>
+    <div class="board">Sahiwal Board</div>
+  </div>
+
+</section>
+
+<section id="subjects">
+
+  <div class="heading">
+    <h2>11th Class All Subjects</h2>
+    <p>Select Your Subject To Read Notes</p>
+  </div>
+
+  <div class="grid" id="subjectList"></div>
+
+</section>
+
+<section class="features">
+
+  <div class="heading">
+    <h2>Why Our Notes Are Best</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Chapter Wise</h3>
+      <p>Organized Chapter-wise Notes</p>
+    </div>
+
+    <div class="card">
+      <h3>Easy To Understand</h3>
+      <p>Simple and Clear Study Material</p>
+    </div>
+
+    <div class="card">
+      <h3>Important Questions</h3>
+      <p>Short and Long Questions</p>
+    </div>
+
+    <div class="card">
+      <h3>MCQs</h3>
+      <p>Chapter-wise MCQs</p>
+    </div>
+
+    <div class="card">
+      <h3>Updated Notes</h3>
+      <p>Relevant Study Material</p>
+    </div>
+
+    <div class="card">
+      <h3>Online PDF Reading</h3>
+      <p>Read Notes On Website</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="price">
+    <h3>Annual Student Package</h3>
+
+    <h2>Rs. 99</h2>
+
+    <p>
+      ✓ All 9 Subjects<br>
+      ✓ Chapter-wise Notes<br>
+      ✓ Short Questions<br>
+      ✓ Long Questions<br>
+      ✓ Important MCQs<br>
+      ✓ Online PDF Reading<br>
+      ✓ One Year Access
+    </p>
+
+    <button class="btn"
+      onclick="alert('Registration and payment system coming soon!')">
+      Get Membership
+    </button>
+
+  </div>
+
+</section>
+
+<section class="about" id="about">
+
+  <h2>About Our Academy</h2>
+
+  <p>
+    Our mission is to provide quality
+    educational notes to 11th Class
+    students across Punjab.
+  </p>
+
+  <p><b>Prepared By: Talha</b></p>
+
+</section>
+
+</main>
+
+<section id="subjectPage" class="hidden">
+
+  <button class="back" onclick="showHome()">
+    ← Back To Home
+  </button>
+
+  <div class="heading">
+    <h2 id="subjectTitle">Subject</h2>
+    <p>11th Class | First Year</p>
+  </div>
+
+  <div id="chapterList"></div>
+
+  <div id="pdfViewer">
+    <h3 id="pdfTitle">Chapter Notes</h3>
+    <p>Online Notes Viewer</p>
+    <iframe id="pdfFrame" title="Online Notes"></iframe>
+    <button class="back" onclick="closePDF()">Close Notes</button>
+  </div>
+
+</section>
+
+<footer>
+
+  <h3><span>TALHA ONLINE ACADEMY</span></h3>
+
+  <p>Learn Better, Achieve More.</p>
+
+  <p>11th Class | All Punjab Boards</p>
+
+  <p>© 2026 Talha Online Academy</p>
+
+</footer>
+
+<script>
+
+const subjects = [
+"English",
+"Computer Science",
+"Urdu",
+"Tarjuma tul Quran",
+"Islamiat",
+"Imranyat",
+"Education",
+"Mathematics",
+"Physics"
+];
+
+const subjectList = document.getElementById("subjectList");
+
+subjects.forEach(subject => {
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const title = document.createElement("h3");
+  title.textContent = subject;
+
+  const description = document.createElement("p");
+  description.textContent =
+    "Chapter-wise Notes, MCQs and Important Questions.";
+
+  const button = document.createElement("button");
+  button.textContent = "Open Notes";
+
+  button.onclick = () => openSubject(subject);
+
+  card.append(title, description, button);
+  subjectList.appendChild(card);
+
+});
+
+function openSubject(subject) {
+
+  document.getElementById("homePage")
+    .classList.add("hidden");
+
+  document.getElementById("subjectPage")
+    .classList.remove("hidden");
+
+  document.getElementById("subjectTitle")
+    .textContent = subject;
+
+  document.getElementById("chapterList")
+    .innerHTML = "";
+
+  document.getElementById("pdfViewer")
+    .style.display = "none";
+
+  for(let i = 1; i <= 15; i++) {
+
+    const row = document.createElement("div");
+    row.className = "chapter";
+
+    const name = document.createElement("strong");
+    name.textContent = "Chapter " + i;
+
+    const button = document.createElement("button");
+    button.textContent = "Read Notes";
+
+    button.onclick = () => {
+      alert("Notes for " + subject +
+        " Chapter " + i + " will be added soon.");
+    };
+
+    row.append(name, button);
+
+    document.getElementById("chapterList")
+      .appendChild(row);
+  }
+
+  window.scrollTo(0,0);
+
+}
+
+function showHome() {
+
+  document.getElementById("subjectPage")
+    .classList.add("hidden");
+
+  document.getElementById("homePage")
+    .classList.remove("hidden");
+
+  window.scrollTo(0,0);
+
+}
+
+function closePDF() {
+
+  document.getElementById("pdfViewer")
+    .style.display = "none";
+
+}
+
+</script>
+
+</body>
+  </html>
+  
